@@ -1,0 +1,46 @@
+#! /bin/sh
+brew bundle --file=- <<EOF
+  cask "visual-studio-code"
+EOF
+
+export PATH="$HOME/env:$PATH"
+
+# Git
+code --install-extension aaron-bond.better-comments
+code --install-extension eamodio.gitlens
+code --install-extension Gruntfuggly.todo-tree
+code --install-extension wayou.vscode-todo-highlight
+
+# Graphql
+code --install-extension kumar-harsh.graphql-for-vscode
+code --install-extension apollographql.vscode-apollo
+
+# Tools
+code --install-extension bierner.markdown-mermaid
+code --install-extension ritwickdey.LiveServer
+code --install-extension ryu1kn.partial-diff
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension christian-kohler.path-intellisense
+code --install-extension ionutvmi.path-autocomplete
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension redhat.vscode-yaml
+
+# Theme & Beautify
+code --install-extension markskelton.one-dark-pro-italic
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension anseki.vscode-color
+code --install-extension HookyQR.beautify
+code --install-extension CoenraadS.bracket-pair-colorizer
+code --install-extension naumovs.color-highlight
+code --install-extension oderwat.indent-rainbow
+code --install-extension vsmobile.vscode-react-native
+code --install-extension BriteSnow.vscode-toggle-quotes
+
+# Language
+code --install-extension ms-python.python
+code --install-extension timonwong.shellcheck
+code --install-extension vscodevim.vim
+code --install-extension dbaeumer.vscode-eslint
+
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
