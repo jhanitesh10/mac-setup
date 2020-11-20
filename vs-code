@@ -41,6 +41,7 @@ code --install-extension ms-python.python
 code --install-extension timonwong.shellcheck
 code --install-extension vscodevim.vim
 code --install-extension dbaeumer.vscode-eslint
+code --install-extension ms-vscode.vscode-typescript-tslint-plugin 
 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
