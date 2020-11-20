@@ -1,0 +1,17 @@
+#! /bin/sh
+
+export PATH="$HOME/env:$PATH"
+brew bundle --file=- <<EOF
+  # Development
+  brew "node@12"
+  cask "insomnia"
+  cask "postman"
+EOF
+
+# Global npm packages
+npm install -g yarn
+npm install -g nvm 
+npm install -g npx
+npm install -g nodemon 
+npm install -g typescript
+npm install -g fkill-cli
