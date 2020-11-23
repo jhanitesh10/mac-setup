@@ -1,0 +1,28 @@
+#! /bin/sh
+export PATH="$HOME/env:$PATH"
+
+brew bundle --file=- <<EOF
+  # Tools
+  brew "mas"
+  brew "zsh"
+  brew "the_silver_searcher"
+  brew "tmux"
+  brew "ranger"
+  brew "wget"
+  brew "jq"
+  brew "yq"
+  brew "watchman"
+  brew "fswatch"
+  brew "neovim"
+  brew "python3"
+  # Development
+  brew "git"
+  # dotfiles
+  tap "thoughtbot/formulae"
+  brew "rcm"
+EOF
+
+# tmuxp
+pip3 install tmuxp
+
+#TODO: Pull dotfiles
