@@ -11,13 +11,13 @@ Follow up with [Link](https://help.github.com/en/enterprise/2.15/user/articles/c
 Paste that in a macOS Terminal or Linux shell prompt
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 3: Clone mac-settup repo onto your lapto(Note: It's important that the directory is in your `$HOME` folder.)
 ```
 cd ~
-git clonse git@github.com:jhanitesh10/mac-setup.git
+git clone git@github.com:jhanitesh10/mac-setup.git
 ```
 
 
