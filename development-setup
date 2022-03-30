@@ -15,14 +15,32 @@ brew bundle --file=- <<EOF
   brew "fswatch"
   brew "neovim"
   brew "python3"
+  brew awscli
+  brew ngrok
+  brew sshuttle
+  brew thefuck
+  brew awscli
+  brew bitwarden
   # Development
   brew "git"
   # dotfiles
   tap "thoughtbot/formulae"
   brew "rcm"
+  # cask 
+  brew "docker" --cask
+  brew "android-studio" --cask
+  brew "cryptomator" --cask
+  brew "aws-vpn-client " --cask
+  brew "robo-3t" --cask
+  brew "fliqlo" --cask
+  brew "mongodb-compass" --cask
+  brew "dbeaver-community" --cask
 EOF
 
 # tmuxp
 pip3 install tmuxp
 
 #TODO: Pull dotfiles
+
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
