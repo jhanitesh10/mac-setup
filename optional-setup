@@ -1,35 +1,67 @@
-#! /bin/sh
-export PATH="$HOME/env:$PATH"
+#!/bin/bash
+
+# Ensure Homebrew is installed
+if ! command -v brew &>/dev/null; then
+  echo "Homebrew not found. Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew is already installed. Updating Homebrew..."
+  brew update
+fi
+
+# Ensure Brew Bundle is available
+if ! brew command bundle &>/dev/null; then
+  echo "Installing Brew Bundle..."
+  brew tap homebrew/bundle
+fi
+
+echo "Starting application installation via Brew Bundle..."
+
+# Brewfile for all applications
 brew bundle --file=- <<EOF
-  # Browsers
-  cask "google-chrome"
-  cask "firefox"
+# mac installer
+brew install mas
 
-  # Communication
-  cask "slack"
-  cask "skype"
-  cask "zoomus"
-  cask "telegram"
+# Browsers
+brew "google-chrome"
+brew "firefox"
+brew "brave-browser"
 
-  # Tools
-  cask "epichrome"
-  cask "alfred"
-  cask "iterm2"
-  cask "rectangle"
-  cask "cheatsheet"
-  cask "flux"
-  cask "drawio"
-  cask "the-unarchiver"
-  cask "notion"
-  cask "spacelauncher"
+# Communication
+brew "slack"
+brew "zoom"
+brew "whatsapp"
+brew "telegram"
 
-  # Media
-  cask "vlc"
-  cask "spotify"
+# tools
+brew "flux"
+brew "raycast"
+brew "notion"
+brew "transmission"
+brew "fliqlo"
+brew "cryptomator"
+brew "the-unarchiver"
+brew "spacelauncher"
+brew "android-file-transfer"
+brew "homerow"
 
-
+# Media
+brew "vlc"
+brew "spotify"
 EOF
 
-# Setup iTerm2
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles-local/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# app store
+# Amphetamine
+mas install 937984704
+# disk cleaner 
+mas install 446243721
+# urban vpn
+mas install 1517772049
+#  bitwarden
+mas install 1352778147
+
+# Cleanup outdated versions
+echo "Cleaning up..."
+brew cleanup
+
+echo "Setup complete!"
