@@ -49,7 +49,7 @@ brew "rectangle"
 # Media
 brew "vlc"
 brew "spotify"
-EOF
+
 
 # app store
 # Amphetamine
@@ -60,9 +60,10 @@ mas install 446243721
 mas install 1517772049
 #  bitwarden
 mas install 1352778147
-
 # Cleanup outdated versions
 echo "Cleaning up..."
+EOF
+
 brew cleanup
 
 echo "Setup complete!"
