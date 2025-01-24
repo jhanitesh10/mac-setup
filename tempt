@@ -1,0 +1,32 @@
+# mac installer
+brew install mas
+
+# Browsers
+brew "google-chrome"
+brew "firefox"
+brew "brave-browser"
+
+# Communication
+brew slack zoom whatsapp telegram
+
+# tools
+brew "flux" "raycast" "notion" "transmission" "fliqlo" "cryptomator" "the-unarchiver" "spacelauncher" "android-file-transfer" "homerow" "rectangle"
+
+brew "vlc" "spotify"
+EOF
+
+# app store
+# Amphetamine
+mas install 937984704  446243721 1517772049 1352778147
+# disk cleaner 
+mas install 446243721
+# urban vpn
+mas install 1517772049
+#  bitwarden
+mas install 1352778147
+
+# Cleanup outdated versions
+echo "Cleaning up..."
+brew cleanup
+
+echo "Setup complete!"
